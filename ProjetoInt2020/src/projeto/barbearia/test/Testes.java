@@ -12,7 +12,7 @@ public class Testes {
 	public static void main(String[] args) {
 		
 		// GUI - Form
-		String nome = "Fabiano";
+		String nome = "Fabiano Vaz";
 		
 		Profissional prof = new Profissional(nome);
 				
