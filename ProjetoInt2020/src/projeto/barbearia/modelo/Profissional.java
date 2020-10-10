@@ -8,7 +8,7 @@ import javax.persistence.Id;
 public class Profissional{
 
 	@Id								// codigo será uma chave da entidade
-	@GeneratedValue					// a chave (codigo) será gerada automaticamente
+	//@GeneratedValue					// a chave (codigo) será gerada automaticamente
 	private int codigo;
 	
 	private String nome;
@@ -16,6 +16,12 @@ public class Profissional{
 	
 	
 	public Profissional() {}
+	
+	public Profissional(int codigo, String nome, double nota) {
+		this.codigo = codigo;
+		this.nome = nome;
+		this.nota = nota;
+	}
 	
 	public Profissional(String nome) {
 		this.nome = nome;
