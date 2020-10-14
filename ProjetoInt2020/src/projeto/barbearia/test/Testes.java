@@ -1,24 +1,25 @@
 package projeto.barbearia.test;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-
-import projeto.barbearia.colecao.Database;
+import projeto.barbearia.colecao.DaoProfissional;
 import projeto.barbearia.modelo.Profissional;
+import projeto.barbearia.modelo.Servico;
 
 public class Testes {
 
 	public static void main(String[] args) {
 		
-		// GUI - Form
-		int cod = 1;
-		String nome = "João";
+		DaoProfissional db = new DaoProfissional();
+		
+		// Input
+		String nome = "João2";
 		double n1 = 3;
 		
-		//Profissional prof = new Profissional(nome);
-		Profissional prof = new Profissional(cod, nome, n1);
-				
-		Database.inserirProfssional( prof );
+		Servico serv = new Servico("corte2", 29.99);
+		//db.inserirServico( serv );
+		
+		Profissional prof = new Profissional(nome, n1, serv);
+		db.inserirProfssional( prof );
+		
+		//System.out.println( prof.getServico().getNome() );
 	}
 }

@@ -23,7 +23,7 @@
 	
 	<tbody>
 		<%for(int i=0; i<10; i++){
-			Profissional p = new Profissional(1, "Edilson", 4);
+			Profissional p = new Profissional();
 			
 			out.println("<tr>");
 				out.println("<td>"+ p.getCodigo() +"</td>");

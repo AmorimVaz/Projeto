@@ -5,26 +5,26 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import projeto.barbearia.modelo.Profissional;
+import projeto.barbearia.modelo.Servico;
 
-public class Database {
+public class DaoServico {
 
-	public static void inserirProfssional(Profissional prof) {
-		SessionFactory sf = new Configuration().configure().buildSessionFactory();
-		
+	public void inserirServico(Servico serv) {
 		// 1. Abrir conexão
-		Session sessao = sf.openSession();
+		Session sessao = ConexaoBD.getSessionFactory().openSession();
 		
 		// 2. Iniciar uma transação
 		sessao.beginTransaction();
 
 		// 3. Executar a transação
-		sessao.save( prof );
+		sessao.save( serv );
 		
 		// 4. Fechar a transação
 		sessao.getTransaction().commit();
 		
 		// 5. Fechar a conexão
 		sessao.close();
+		
 	}
 
 }
