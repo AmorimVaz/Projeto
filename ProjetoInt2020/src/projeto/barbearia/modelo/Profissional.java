@@ -1,12 +1,9 @@
 package projeto.barbearia.modelo;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
-import org.hibernate.annotations.Cascade;
 
 @Entity								// Create Table Profissional
 public class Profissional{
@@ -16,7 +13,7 @@ public class Profissional{
 	private int codigo;
 	
 	private String nome;
-	private double nota;
+	private double nota;			// média de todas as notas 
 	
 	@ManyToOne //(cascade = CascadeType.ALL )
 	private Servico servico;		// Associação
@@ -64,13 +61,21 @@ public class Profissional{
 		return nota;
 	}
 
-	public void setNota(double nota) {
-		this.nota = nota;
+	public void setNota(double novaNota) {
+		// Se for a 1º nota.... apenas atribuir
+		// Senão... calcular média
+		
+		if(nota == -1)
+			nota = novaNota;
+		else
+			nota = (nota + novaNota) / 2;
+		
+		//nota = nota == -1 ? novaNota : (nota + novaNota) / 2;
 	}
 	
 	@Override
 	public String toString() {
-		return codigo + " - " + nome;
+		return codigo + " - " + nome + " | " + nota;
 	}
 	
 }

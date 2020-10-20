@@ -13,7 +13,12 @@
 <%
 	// 1. Coletar
 	String nome = request.getParameter("tx_nome");
-	double valor = Double.parseDouble( request.getParameter("tx_valor") ); 
+	double valor = 0;	
+	try{
+		valor = Double.parseDouble( request.getParameter("tx_valor") ); 
+	}catch(Exception e){
+		
+	}
 	
 	// 2. Construir
 	Servico servico = new Servico(nome, valor);
