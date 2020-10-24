@@ -13,9 +13,10 @@
 <%
 	// 1. Coletar
 	String nome = request.getParameter("tx_nome");
-	double valor = 0;	
+	double valor = 0;
+	
 	try{
-		valor = Double.parseDouble( request.getParameter("tx_valor") ); 
+		valor = Double.parseDouble( request.getParameter("tx_valor") );
 	}catch(Exception e){
 		
 	}

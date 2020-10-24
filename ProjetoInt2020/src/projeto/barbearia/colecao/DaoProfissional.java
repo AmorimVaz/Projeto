@@ -11,7 +11,7 @@ import projeto.barbearia.modelo.Servico;
 
 public class DaoProfissional {
 
-	public void salvarProfissional(Profissional prof) {
+	public static void salvarProfissional(Profissional prof) {
 		// Se o nome do profissional já esteja cadastrado, informar erro
 				
 		// 1. consulta no nome no BD
@@ -26,7 +26,7 @@ public class DaoProfissional {
 		inserirProfssional( prof );	
 	}
 	
-	private void inserirProfssional(Profissional prof) {
+	private static void inserirProfssional(Profissional prof) {
 		// 1. Abrir conexão
 		Session sessao = ConexaoBD.getSessionFactory().openSession();
 		
@@ -43,7 +43,7 @@ public class DaoProfissional {
 		sessao.close();
 	}
 	
-	public void excluirProfssional(Profissional prof) {
+	public static void excluirProfssional(Profissional prof) {
 		// 1. Abrir conexão
 		Session sessao = ConexaoBD.getSessionFactory().openSession();
 		
@@ -60,7 +60,7 @@ public class DaoProfissional {
 		sessao.close();
 	}
 	
-	public void editarProfssional(Profissional prof) {
+	public static void editarProfssional(Profissional prof) {
 		// 1. Abrir conexão
 		Session sessao = ConexaoBD.getSessionFactory().openSession();
 		
@@ -77,7 +77,7 @@ public class DaoProfissional {
 		sessao.close();
 	}
 
-	public List<Profissional> listarProfissional(){
+	public static List<Profissional> listarProfissional(){
 		// 1. Abrir conexão
 		Session sessao = ConexaoBD.getSessionFactory().openSession();
 		

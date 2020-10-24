@@ -1,3 +1,4 @@
+<%@page import="projeto.barbearia.colecao.DaoProfissional"%>
 <%@page import="projeto.barbearia.modelo.Profissional"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -18,17 +19,17 @@
 			<th>Código</th>
 			<th>Nome</th>
 			<th>Nota</th>
+			<th>Serviço</th>
 		</tr>
 	</thead>
 	
 	<tbody>
-		<%for(int i=0; i<10; i++){
-			Profissional p = new Profissional();
-			
+		<%for(Profissional p : DaoProfissional.listarProfissional()){
 			out.println("<tr>");
 				out.println("<td>"+ p.getCodigo() +"</td>");
 				out.println("<td>"+ p.getNome() +"</td>");
 				out.println("<td>"+ p.getNota() +"</td>");
+				out.println("<td>"+ p.getServico().getNome() +"</td>");
 			out.println("</tr>");
 		}%>
 	</tbody>

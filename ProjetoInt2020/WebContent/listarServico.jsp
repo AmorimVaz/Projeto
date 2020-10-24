@@ -21,7 +21,7 @@
 	</thead>
 	
 	<tbody>
-	<%for( Servico s : new DaoServico().listarServico()){%>
+	<%for( Servico s : DaoServico.listarServico()){%>
 			<tr>
 				<td><%=s.getId()%></td>
 				<td><%=s.getNome()%></td>

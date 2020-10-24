@@ -1,39 +1,59 @@
 package projeto.barbearia.test;
 
 import projeto.barbearia.colecao.DaoProfissional;
+import projeto.barbearia.colecao.DaoServico;
 import projeto.barbearia.modelo.Profissional;
 import projeto.barbearia.modelo.Servico;
 
 public class Testes {
 
 	public static void main(String[] args) {
-		Profissional p1 = new Profissional("José");
-		System.out.println( p1 );
+		System.out.println("== Listar ==================");
+		for(Servico s: DaoServico.listarServico()) {
+			System.out.println( "ID:" + s.getId() +  "\t Valor:" +s.getValor()+  "\t Nome: " + s.getNome() );
+		}
 		
-		p1.setNota( 4 );
-		System.out.println( p1 );
+		System.out.println("== Filtrar ==================");
+		for(Servico s: DaoServico.filtrarServicoPorValor( 16 )) {
+			System.out.println( "Valor:" +s.getValor()+  "\t Nome: " + s.getNome() );
+		}
 		
-		p1.setNota( 5 );
-		System.out.println( p1 );
+		System.out.println("== Filtrar ==================");
+		for(Servico s: DaoServico.filtrarServicoPorNome( "Lu" )) {
+			System.out.println( "Valor:" +s.getValor()+  "\t Nome: " + s.getNome() );
+		}
 		
-		p1.setNota( 4.5 );
-		System.out.println( p1 );
+		System.out.println("== Localizar ==================");
+		Servico localizado = DaoServico.localizarServicoPorCodigo(2);
+		System.out.println( "Valor:" +localizado.getValor()+  "\t Nome: " + localizado.getNome() );
 		
-		p1.setNota( 1 );
-		System.out.println( p1 ); 
+		//DaoServico.removerServico(localizado);
 		
-		
-		DaoProfissional db = new DaoProfissional();
+//		Profissional p1 = new Profissional("João");
+//		System.out.println( p1 );
 //		
+//		p1.setNota( 4 );
+//		System.out.println( p1 );
+//		
+//		p1.setNota( 5 );
+//		System.out.println( p1 );
+//		
+//		p1.setNota( 4.5 );
+//		System.out.println( p1 );
+
 //		// Input
-//		String nome = "João2";
-//		double n1 = 3;
-//		
-//		Servico serv = new Servico("corte2", 29.99);
-//		//db.inserirServico( serv );
-//		
-//		Profissional prof = new Profissional(nome, n1, serv);
-		db.salvarProfissional( p1 );
+		String nome = "João2";
+		double n1 = 3;
+		
+		Servico serv = new Servico("corte2", 29.99);
+//		db.inserirServico( serv );
+		
+		Profissional prof = new Profissional(nome, n1, serv);
+		DaoProfissional.salvarProfissional( prof );
+		
+//		for(Profissional p : DaoProfissional.listarProfissional()) {
+//			System.out.println(p);
+//		}
 //		
 //		//System.out.println( prof.getServico().getNome() );
 	}
