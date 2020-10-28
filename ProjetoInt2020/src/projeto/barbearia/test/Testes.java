@@ -8,24 +8,25 @@ import projeto.barbearia.modelo.Servico;
 public class Testes {
 
 	public static void main(String[] args) {
-		System.out.println("== Listar ==================");
-		for(Servico s: DaoServico.listarServico()) {
-			System.out.println( "ID:" + s.getId() +  "\t Valor:" +s.getValor()+  "\t Nome: " + s.getNome() );
-		}
-		
-		System.out.println("== Filtrar ==================");
-		for(Servico s: DaoServico.filtrarServicoPorValor( 16 )) {
-			System.out.println( "Valor:" +s.getValor()+  "\t Nome: " + s.getNome() );
-		}
-		
-		System.out.println("== Filtrar ==================");
-		for(Servico s: DaoServico.filtrarServicoPorNome( "Lu" )) {
-			System.out.println( "Valor:" +s.getValor()+  "\t Nome: " + s.getNome() );
-		}
-		
-		System.out.println("== Localizar ==================");
-		Servico localizado = DaoServico.localizarServicoPorCodigo(2);
-		System.out.println( "Valor:" +localizado.getValor()+  "\t Nome: " + localizado.getNome() );
+	
+//		System.out.println("== Listar ==================");
+//		for(Servico s: DaoServico.listarServico()) {
+//			System.out.println( "ID:" + s.getId() +  "\t Valor:" +s.getValor()+  "\t Nome: " + s.getNome() );
+//		}
+//		
+//		System.out.println("== Filtrar ==================");
+//		for(Servico s: DaoServico.filtrarServicoPorValor( 16 )) {
+//			System.out.println( "Valor:" +s.getValor()+  "\t Nome: " + s.getNome() );
+//		}
+//		
+//		System.out.println("== Filtrar ==================");
+//		for(Servico s: DaoServico.filtrarServicoPorNome( "Lu" )) {
+//			System.out.println( "Valor:" +s.getValor()+  "\t Nome: " + s.getNome() );
+//		}
+//		
+//		System.out.println("== Localizar ==================");
+//		Servico localizado = DaoServico.localizarServicoPorCodigo(2);
+//		System.out.println( "Valor:" +localizado.getValor()+  "\t Nome: " + localizado.getNome() );
 		
 		//DaoServico.removerServico(localizado);
 		
