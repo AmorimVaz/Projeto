@@ -15,7 +15,7 @@
         <property name="format_sql">true</property>
 
         <!-- Drop and then re-create schema on SessionFactory build, for testing  -->
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
 
 	<!-- Use the Hibernate built-in pool for tests. -->
         <property name="connection.pool_size">3</property>
@@ -23,6 +23,7 @@
 	<!--*********** Mapeamento das classes/tabelas ...  ***********-->        
 	<mapping class="projeto.barbearia.modelo.Servico"/> 
 	<mapping class="projeto.barbearia.modelo.Profissional"/>
+	<mapping class="projeto.barbearia.modelo.Perfil"/> 
         
     </session-factory>
 

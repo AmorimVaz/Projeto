@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import projeto.barbearia.modelo.Profissional;
-import projeto.barbearia.modelo.Servico;
+import projeto.barbearia.modelo.Profissional;
 
 public class DaoProfissional {
 
@@ -95,4 +95,19 @@ public class DaoProfissional {
 		
 		return lista;
 	}
+	
+	public static Profissional localizarProfissionalPorCodigo(int cod){
+		Session sessao = ConexaoBD.getSessionFactory().openSession();
+		sessao.beginTransaction();
+
+		// SELECT * FROM Profissional WHERE id == 1
+		Profissional obj = (Profissional) sessao.createQuery("FROM Profissional WHERE codigo = " + cod).uniqueResult();
+		//Profissional obj2 = (Profissional) sessao.load(Profissional.class, cod);
+		
+		sessao.getTransaction().commit();
+		sessao.close();
+
+		return obj;
+	}
+	
 }
