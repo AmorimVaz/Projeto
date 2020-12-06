@@ -13,7 +13,7 @@
 <%
 	String usuario = request.getParameter("tx_usuario");
 	String senha = request.getParameter("tx_senha");
-	
+
 	Perfil perfilDB = DaoPerfil.localizarPerfilPorUsuario( usuario );
 	
 	if( perfilDB != null ){
